@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <title>Белая Полоса — клиниговая компания — химчистка с выездом в Самаре</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" id="gridalicious-style-css" href="http://white-stripe.com/wp-content/themes/gridalicious/style.css?ver=4.8.1" type="text/css" media="all">
+    <link rel="stylesheet" href="/tasks/style.css" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="/tasks/tasks.js"></script>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container" style="position: relative; margin: auto;">
+    <div id="services" class="workarea" style="padding-top: 120px;">
+        <h2>Выберите тип услуги</h2>
+        <div class="item" style="background: url(//white-stripe.com/wp-content/uploads/2016/11/40-300x225.jpg)" data-type="sofa" onclick="activeModal(sofasModal);">
+            <h5>Химчистка мягкой мебели</h5>
+        </div>
+        <div class="item" style="background: url(//white-stripe.com/wp-content/uploads/2016/12/gUBE_ZBPCJ0-300x173.jpg)" data-type="carpet" onclick="activeModal(carpetModal)">
+            <h5>Химчистка ковра</h5>
+        </div>
+        <div class="item" style="background: url(//white-stripe.com/wp-content/uploads/2017/04/chistka-matrasa-300x129.jpg)" data-type="mattress" onclick="activeModal(mattressModal)">
+            <h5>Химчистка матраса</h5>
+        </div>
+        <div class="item" style="background: url(//white-stripe.com/wp-content/uploads/2017/02/chistka-miagkih-igrushek-300x129.jpg)" data-type="toys" onclick="activeModal(toysModal)">
+            <h5>Химчистка плюшевой игрушки</h5>
+        </div>
+        <div class="item" style="background: url(//white-stripe.com/wp-content/uploads/2016/12/BpDmz_4UC-Q-300x188.jpg)" data-type="cars" onclick="activeModal(carsModal)">
+            <h5>Химчистка салона автотранспорта</h5>
+        </div>
+        <div class="item" style="background: url(//white-stripe.com/wp-content/uploads/2017/04/udalenie-graffiti.jpg)" data-type="window" onclick="activeModal(windowModal)">
+            <h5>Мойка окон</h5>
+        </div>
+    </div>
+        <div id="basket">
+            <h3>Выбраные услуги</h3>
+            <div id="orders" class="workarea"></div>
+            <p class="costOrder">Примерная стоимость: <b>0</b> руб</p>
+        </div>
+    <div>
+        <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Ваше имя</label>
+            <div class="col-2">
+                <input class="form-control" type="text" value="Дмитрий" id="example-text-input">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-tel-input" class="col-2 col-form-label">Телефон</label>
+            <div class="col-2">
+                <input class="form-control" type="tel" value="+7-937-992-41-46" id="example-tel-input">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="date" class="col-2 col-form-label">Дата</label>
+            <div class="col-2">
+                <input id="datepicker" type="text" placeholder="17/12/2017" id="date"/>
+            </div>
+        </div>
+        <label class="custom-control custom-radio">
+            <input id="radio1" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Предоплата (скидка 5%)</span>
+        </label>
+        <label class="custom-control custom-radio">
+            <input id="radio2" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Полная оплата (скидка 10%)</span>
+        </label>
+        <div class="btn btn-primary">Оплатить</div>
+    </div>
+</div>
+<div class="modal fade" id="sofasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Тип мебели</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="workarea" data-modal="sofasModal">
+                    <div class="type 2type" style="background: url(//st16.stblizko.ru/images/product/185/014/201_medium.jpg)" data-type="2-type">
+                        <p><b>300</b> р</p>
+                        <h4>Двухместный диван</h4>
+                    </div>
+                    <div class="type" style="background: url(//st51.stblizko.ru/images/product/172/924/982_medium.png)" data-type="3-type">
+                        <p><b>500</b> р</p>
+                        <h4>Трехместный диван</h4>
+                    </div>
+                    <div class="type" style="background: url(//st13.stpulscen.ru/images/product/112/124/246_big.jpg)" data-type="angle">
+                        <p><b>700</b> р</p>
+                        <h4>Угловой диван</h4>
+                    </div>
+                    <div class="type" style="background: url(//angagement.ru/upload/iblock/e13/1.jpg)" data-type="p-type">
+                        <p><b>1000</b> р</p>
+                        <h4>П-образный диван</h4>
+                    </div>
+                    <div class="type" style="background: url(//img.mebelok.com/image/cache/data/Kompanit/kuhonnyi-ugolok-araviya-01-0x0.jpg)" data-type="kitchens">
+                        <p><b>600</b> р</p>
+                        <h4>Кухонный уголок</h4>
+                    </div>
+                    <div class="type" style="background: url(//s-media-cache-ak0.pinimg.com/originals/5c/9e/38/5c9e38840cc709ea59db7913bed033a4.jpg)" data-type="draws">
+                        <p><b>600</b> р</p>
+                        <h4>Кресло</h4>
+                    </div>
+                    <div class="type" style="background: url(//mebelsosklada63.ru/wp-content/uploads/%D0%BF%D1%80%D0%B5%D1%81%D1%82%D0%B8%D0%B6-%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9.jpg)" data-type="draws-office">
+                        <p><b>600</b> р</p>
+                        <h4>Офисное кресло</h4>
+                    </div>
+                    <div class="type" style="background: url(//www.ikea.com/PIAimages/0340758_PE530585_S3.JPG)" data-type="chair">
+                        <p><b>600</b> р</p>
+                        <h4>Стул</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="carpetModal" tabindex="-1" role="dialog" aria-labelledby="carpetModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="carpetModalLabel">Химчистка ковра</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <div class="form-group">
+                    <label for="widthCarpet">Длина</label>
+                    <input type="number" class="form-control" id="widthCarpet" min="100" max="10000" value="100">
+                    <p>см</p>
+                </div>
+                <div class="form-group">
+                    <label for="heightCarpet">Ширина</label>
+                    <input type="number" class="form-control" id="heightCarpet" min="100" max="10000" value="100">
+                    <p>см</p>
+                </div>
+                <div><p><i class="sCarpet">1.00</i> м² * 150 руб\м²</p></div>
+                <div><p>Стоимость химчистки: <b class="costCarpet">150</b> руб</p></div>
+            </div>
+            <div class="modal-footer">
+                <div class="btn btn-primary" onclick="addCarpet()">Добавить</div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mattressModal" tabindex="-1" role="dialog" aria-labelledby="mattressModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mattressModalLabel">Тип матраса</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="workarea" data-modal="mattressModal">
+                    <div class="type" style="background: url(//interia.com.ua/wp-content/uploads/matras_materasso_ergo_600-3-200x200.jpg)" data-type="2-type">
+                        <p><b>1000</b> р</p>
+                        <h4>Однометный матрас</h4>
+                    </div>
+                    <div class="type" style="background: url(//askona.ua/uploads/articles/etiketki/image004.jpg)" data-type="3-type">
+                        <p><b>1500</b> р</p>
+                        <h4>Двухместный матрас</h4>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="toysModal" tabindex="-1" role="dialog" aria-labelledby="toysModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="toysModalLabel">Размер игрушки</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="workarea" data-modal="toysModal">
+                    <div class="type" style="background: url(http://kidy-kid.com.ua/img/category/0_5498a_19d1af44_XL.jpg.pagespeed.ce.sbxlWsyk5M.jpg)" data-type="2-type">
+                        <p><b>700</b> р</p>
+                        <h4>от 100 см до 150 см</h4>
+                    </div>
+                    <div class="type" style="background: url(//www.roza21.zp.ua/wp-content/uploads/2016/10/%D0%9C%D1%8F%D0%B3%D0%BA%D0%B0%D1%8F-%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%BA%D0%B0-%D0%9C%D0%B8%D1%88%D0%BA%D0%B0-300x300.jpg)" data-type="3-type">
+                        <p><b>1100</b> р</p>
+                        <h4>свыше 150 см</h4>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="windowModal" tabindex="-1" role="dialog" aria-labelledby="windowModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="windowModalLabel">Тип окна</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="workarea" data-modal="windowModal">
+                    <div class="type" style="background: url(http://avenue-cleaning.ru/upload/iblock/681/681db1d2ef8170b6e9c170916f576e3f.jpg)" data-type="2-type">
+                        <p><b>250</b> р</p>
+                        <h4>Одностворчатое пластиковое</h4>
+                    </div>
+                    <div class="type" style="background: url(http://avenue-cleaning.ru/upload/iblock/19d/19dcdcd3ef74040a8e3e94e3b08978f1.jpg)" data-type="3-type">
+                        <p><b>450</b> р</p>
+                        <h4>Двухстворчатые пластиковые и деревянные</h4>
+                    </div>
+                    <div class="type" style="background: url(http://avenue-cleaning.ru/upload/iblock/4f1/4f12bb26a3eebe768aab08a6cd66ccae.jpg)" data-type="3-type">
+                        <p><b>550</b> р</p>
+                        <h4>Трехстворчатые пластиковые и деревянные</h4>
+                    </div>
+                    <div class="type" style="background: url(http://avenue-cleaning.ru/upload/iblock/25b/25befb6748fd2951aec8e9c547a6b7ae.jpg)" data-type="3-type">
+                        <p><b>700</b> р</p>
+                        <h4>Балконный блок и дверь</h4>
+                    </div>
+                    <div class="type" style="background: url(http://avenue-cleaning.ru/upload/iblock/6e3/6e34cf20a515609ca5cafa2b92cd182f.jpg)" data-type="3-type">
+                        <p><b>400</b> р</p>
+                        <h4>Витражные окна на высоте от 2,5м</h4>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
